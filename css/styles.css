@@ -92,6 +92,7 @@ header {
   background-color: var(--title-text-color);
   max-width: 768px;
   height: 432px;
+
   padding-top: 112px;
   text-align: center;
   background-image:
@@ -189,11 +190,15 @@ background-image:
 }
 
 .team-list-content {
-  width: 264px;
-  margin: 0 auto;
   padding-top: 32px;
   padding-bottom: 32px;
   background-color: var(--primary-white-color);
+}
+
+.team-list>.item {
+  background: var(--primary-white-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-list .item .text {
@@ -207,7 +212,7 @@ background-image:
 
 .social-list {
   display: flex;
-  justify-content: space-around;
+  column-gap: 56px;
 }
 
 .social-list .item .link {
@@ -331,7 +336,7 @@ background-image:
 .form-footer .form-footer-button {
   display: flex;
   margin: 0 auto;
-  width: 166px;
+  width: 165px;
   height: 40px;
   padding: 8px 24px;
   font-weight: 700;
@@ -468,7 +473,8 @@ background-image:
     display: none;
   }
 
-  .team-list .item .image {
+  .team-list {
+    width: 264px;
     margin: 0 auto;
   }
 
@@ -643,19 +649,14 @@ background-image:
     margin-bottom: 72px;
   }
 
-  .team-list {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-
   .footer-main {
     padding-top: 96px;
     padding-bottom: 96px;
   }
 
-  .form-footer {
-    display: flex;
+  .footer-list .item-footer .input {
+    width: 264px;
+    margin-right: 24px;
   }
 }
 
@@ -664,7 +665,17 @@ background-image:
     margin-bottom: 72px;
   }
 
-  .team-list > .item:first-child {
+  .team-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .team-list>.item:nth-child(odd) {
+    margin-right: 24px;
+  }
+
+  .team-list>.item:nth-child(-n+2) {
     margin-bottom: 64px;
   }
 
@@ -676,11 +687,29 @@ background-image:
     margin-bottom: 72px;
   }
 
+  .footer-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer-list>.item:first-child {
+    margin-left: 72px;
+    margin-right: 24px;
+    margin-bottom: 72px;
+  }
+
+  .footer-list .item-footer {
+    margin-left: 72px;
+  }
+
+  .form-footer {
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
-    width: 1128px;
+    width: 1160px;
   }
   
   .site-nav {
@@ -709,6 +738,7 @@ background-image:
   .hero {
     max-width: 1440px;
     height: 600px;
+    margin: 0 auto;
     padding-top: 188px;
     background-image:
       linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -801,48 +831,46 @@ background-image:
     padding-bottom: 120px;
   }
 
-.team-list {
-  display: flex;
-  justify-content: space-between;
-}
+  .team-list {
+    display: flex;
+    margin-left: calc(-1 * var(--card-gap));
+  }
 
-.team-list > .item {
-  text-align: center;
-  background: var(--primary-white-color);
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  border-radius: 0px 0px 4px 4px;
-}
+  .team-list>.item {
+    flex-basis: calc(100% / 4 - var(--card-gap));
+    margin-left: var(--card-gap);
+  }
 
-.customers-list {
-  display: flex;
-  justify-content: space-between;
-}
+  .customers-list {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.footer-main {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
+  .footer-main {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 
-.footer-list {
-  display: flex;
-}
+  .footer-list {
+    display: flex;
+  }
 
-.footer-list>.item:nth-child(1) {
-  margin-right: 120px;
-}
+  .footer-list>.item:nth-child(1) {
+    margin-right: 120px;
+  }
 
-.footer-list>.item:nth-child(2) {
-  margin-right: 80px;
-}
+  .footer-list>.item:nth-child(2) {
+    margin-right: 80px;
+  }
 
-.form-footer {
-  display: flex;
-}
+  .form-footer {
+    display: flex;
+  }
 
-.form-footer .label .input {
-  width: 264px;
-  margin-right: 24px;
-}
+  .form-footer .label .input {
+    width: 264px;
+    margin-right: 24px;
+  }
 }
 
 .backdrop {
